@@ -1,0 +1,9 @@
+roles:
+  - name: user
+    headers:
+      X-User-ID: "1"
+      X-Role: user
+  - name: admin
+    headers:
+      X-User-ID: "1"
+      X-Role: admin

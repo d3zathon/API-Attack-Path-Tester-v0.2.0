@@ -1,0 +1,8 @@
+services:
+  lab:
+    build:
+      context: .
+      dockerfile: lab/Dockerfile
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: AAPT Lab API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+paths:
+  /users/{user_id}:
+    get:
+      operationId: getUser
+      parameters:
+        - {name: user_id, in: path, required: true, schema: {type: integer}}
+      responses: {'200': {description: OK}}
+    patch:
+      operationId: updateUser
+      parameters:
+        - {name: user_id, in: path, required: true, schema: {type: integer}}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role: {type: string}
+                email: {type: string}
+      responses: {'200': {description: OK}}
+  /orders/{order_id}:
+    get:
+      operationId: getOrder
+      parameters:
+        - {name: order_id, in: path, required: true, schema: {type: integer}}
+      responses: {'200': {description: OK}}
+    patch:
+      operationId: updateOrder
+      parameters:
+        - {name: order_id, in: path, required: true, schema: {type: integer}}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                owner_id: {type: integer}
+                status: {type: string}
+      responses: {'200': {description: OK}}
+  /orders/{order_id}/approve:
+    post:
+      operationId: approveOrder
+      parameters:
+        - {name: order_id, in: path, required: true, schema: {type: integer}}
+      responses: {'200': {description: OK}}
+  /admin/users:
+    get:
+      operationId: adminUsers
+      responses: {'200': {description: OK}}

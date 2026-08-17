@@ -1,0 +1,8 @@
+seed:
+  user_id: 1
+  other_user_id: 2
+  order_id: 101
+  other_order_id: 102
+  owner_id: 1
+  other_owner_id: 2
+  elevated_role: admin
